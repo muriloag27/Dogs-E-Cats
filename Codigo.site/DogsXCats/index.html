@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dogs X Cats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="sound-toggle" id="sound-toggle" title="Ligar/desligar som" aria-label="Ligar/desligar som">🔊</button>
+<div class="banner" id="banner"></div>
+
+<h1 class="logo"><img src="assets/logo.png" alt="Dogs X Cats" width="800" height="558"></h1>
+
+<nav class="tabs" id="tabs">
+  <button class="active" data-tab="home">🏠 Home</button>
+  <button data-tab="howto">📖 Como jogar</button>
+  <button data-tab="dogs">🐶 Dogs</button>
+  <button data-tab="cats">🐱 Cats</button>
+  <button data-tab="bonus">🎴 Cartas Bônus</button>
+  <button data-tab="creators">⭐ Criadores</button>
+  <button data-tab="support">🛠️ Suporte</button>
+</nav>
+
+<div class="panel" id="tab-home">
+  <div class="hero-art"><img src="assets/capa-jogo.png" alt="Um cachorro e um gato disputando a bola em um estádio lotado" width="1536" height="1152"></div>
+
+  <p class="sub">Gatos 🐱 contra Cachorros 🐶 — o jogo de tabuleiro onde cada rodada pode virar o placar.</p>
+
+  <div class="choose">
+    <button class="btn-cat" data-tab-link="howto">📖 Como jogar</button>
+    <button class="btn-dog" data-tab-link="bonus">🎴 Ver as cartas</button>
+  </div>
+
+  <div class="box home-info">
+    <h2>🐾 Sobre o jogo</h2>
+    <ul>
+      <li><strong>Jogadores:</strong> 2 a 4 participantes.</li>
+      <li><strong>Idade:</strong> a partir de 8 anos.</li>
+      <li><strong>Duração:</strong> cerca de 15 minutos.</li>
+      <li><strong>Componentes:</strong> tabuleiro, cartas de personagem, cartas bônus e dados.</li>
+      <li><strong>Objetivo:</strong> ser o primeiro a marcar 3 gols.</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="panel hidden" id="tab-howto">
+  <div class="box">
+    <h2>📖 Como jogar</h2>
+
+    <p>
+      O jogo funciona por meio de rodadas, nas quais os participantes
+      disputam pontos utilizando seus personagens e cartas bônus.
+    </p>
+
+    <h3>Escolha dos personagens</h3>
+    <ul>
+      <li>Cada jogador escolhe uma carta de personagem da própria mão e a coloca virada para baixo no tabuleiro, sem revelar seu valor ao adversário.</li>
+      <li>Cada participante pode utilizar apenas uma carta de personagem por rodada.</li>
+    </ul>
+
+    <h3>Utilização dos bônus</h3>
+    <ul>
+      <li>Antes de revelar as cartas de personagens, cada jogador pode utilizar uma carta bônus, caso deseje.</li>
+      <li>É permitido utilizar apenas um bônus por jogador em cada rodada. Seu efeito deverá ser considerado no cálculo final da disputa.</li>
+      <li>Não é permitido iniciar uma jogada utilizando somente uma carta bônus. É obrigatório apresentar uma carta de personagem.</li>
+    </ul>
+
+    <h3>Revelação das cartas</h3>
+    <ul>
+      <li>Após a escolha dos personagens e a utilização dos bônus, os jogadores revelam simultaneamente suas cartas.</li>
+      <li>A pontuação final é calculada considerando a força do personagem e os efeitos dos bônus utilizados.</li>
+    </ul>
+
+    <h3>Resultado da rodada</h3>
+    <ul>
+      <li>O jogador que apresentar a maior pontuação vence a disputa e avança sua bola uma casa em direção ao gol adversário.</li>
+      <li>O jogador que perder permanece na posição atual.</li>
+      <li>As cartas utilizadas permanecem no tabuleiro após a disputa.</li>
+    </ul>
+
+    <h3>Sistema de desempate</h3>
+    <ul>
+      <li>Caso os dois jogadores terminem a disputa com a mesma pontuação, será utilizado um dado D6.</li>
+      <li>Cada participante lança seu dado, e aquele que conseguir o maior resultado vence a disputa e avança uma casa.</li>
+      <li>Se ocorrer um novo empate, os jogadores repetem os lançamentos até que exista um vencedor.</li>
+    </ul>
+
+    <h3>Sistema de gols e finalização</h3>
+    <ul>
+      <li>Quando a bola de um jogador alcançar a área do gol adversário, começa a disputa de finalização.</li>
+      <li>Nesse momento, nenhum dos jogadores pode utilizar cartas de personagem ou bônus.</li>
+      <li>O atacante deverá lançar um dado D12, enquanto o goleiro adversário deverá lançar um dado D8.</li>
+    </ul>
+
+    <h4>Resultado da finalização</h4>
+    <ul>
+      <li>Se o atacante conseguir um resultado maior que o goleiro, marca um gol.</li>
+      <li>Se o goleiro conseguir um resultado maior que o atacante, realiza a defesa.</li>
+      <li>Caso os dois dados apresentem o mesmo resultado, os lançamentos deverão ser repetidos até que exista um vencedor.</li>
+    </ul>
+
+    <h4>Em caso de gol</h4>
+    <p>A bola retorna à posição inicial do campo e a partida recomeça normalmente.</p>
+
+    <h4>Em caso de defesa</h4>
+    <p>O goleiro impede o gol e o jogador responsável pela defesa avança sua bola uma casa em direção ao gol adversário.</p>
+
+    <h3>Compra e utilização das cartas</h3>
+    <ul>
+      <li>Cada jogador inicia a partida com 5 cartas na mão.</li>
+      <li>Durante a partida, caso fique sem cartas de personagem disponíveis para realizar uma jogada, deverá obter uma nova carta de personagem antes de continuar.</li>
+      <li>Para isso, poderá descartar uma carta do próprio baralho e retirar uma carta de personagem disponível.</li>
+      <li>Não é permitido realizar uma rodada utilizando somente cartas bônus.</li>
+      <li>As cartas de personagens e bônus utilizadas permanecem no tabuleiro, conforme a dinâmica definida para o jogo.</li>
+    </ul>
+
+    <h3>Condição de vitória</h3>
+    <ul>
+      <li>O objetivo principal é ser o primeiro jogador a marcar 3 gols.</li>
+      <li>Assim que uma das equipes alcançar essa quantidade, a partida termina imediatamente e seu jogador é declarado vencedor.</li>
+    </ul>
+
+    <h3>Observações gerais</h3>
+    <ul>
+      <li>Cada jogador representa exclusivamente uma equipe.</li>
+      <li>Brutus e Shadow são os goleiros fixos de suas respectivas equipes.</li>
+      <li>Cada jogador pode utilizar apenas um personagem e uma carta bônus por rodada.</li>
+      <li>Os bônus devem ser utilizados antes da revelação das cartas de personagens.</li>
+      <li>Os empates nas disputas e nas finalizações são resolvidos por novos lançamentos de dados.</li>
+      <li>O primeiro jogador a marcar 3 gols vence a partida.</li>
+    </ul>
+  </div>
+</div>
+<div class="panel hidden" id="tab-dogs">
+  <div class="box">
+    <h2>🐶 Cachorros</h2>
+    <p class="team-summary" id="dogs-summary"></p>
+    <div class="legend"><span style="--c:var(--gold)">Dourada</span><span style="--c:var(--silver)">Prata</span><span style="--c:var(--bronze)">Bronze</span></div>
+    <div class="gallery" id="dogs-gallery"></div>
+  </div>
+</div>
+
+<div class="panel hidden" id="tab-cats">
+  <div class="box">
+    <h2>🐱 Gatos</h2>
+    <p class="team-summary" id="cats-summary"></p>
+    <div class="legend"><span style="--c:var(--gold)">Dourada</span><span style="--c:var(--silver)">Prata</span><span style="--c:var(--bronze)">Bronze</span></div>
+    <div class="gallery" id="cats-gallery"></div>
+  </div>
+</div>
+<div class="panel hidden" id="tab-bonus">
+  <div class="box">
+    <h2>🎴 Cartas Bônus</h2>
+
+    <p class="team-summary">
+      Cartas especiais que alteram a força dos jogadores durante a rodada.
+      Os efeitos são aplicados durante a rodada em que a carta é utilizada.
+    </p>
+
+    <h3>Petiscos</h3>
+    <ul>
+      <li>Adiciona <strong>+1</strong> ou <strong>+2</strong> pontos à força do jogador, conforme indicado na carta.</li>
+    </ul>
+
+    <h3>Escudo</h3>
+    <ul>
+      <li>Pode retirar <strong>2</strong> pontos da força do adversário (<strong>-2</strong>).</li>
+      <li>Ou adicionar <strong>3</strong> pontos à força do próprio jogador (<strong>+3</strong>).</li>
+    </ul>
+
+    <h3>Raio</h3>
+    <ul>
+      <li>Pode adicionar <strong>1</strong> ponto à força do jogador (<strong>+1</strong>).</li>
+      <li>Ou retirar <strong>2</strong> pontos da força do adversário (<strong>-2</strong>).</li>
+    </ul>
+
+    <h3>Chuteira</h3>
+    <ul>
+      <li>Pode retirar <strong>1</strong> ponto da força do adversário (<strong>-1</strong>).</li>
+      <li>Ou adicionar <strong>2</strong> pontos à força do próprio jogador (<strong>+2</strong>).</li>
+    </ul>
+
+    <p class="team-summary">
+      Os efeitos são aplicados durante a rodada em que a carta é utilizada.
+    </p>
+
+    <div class="gallery bonus-gallery">
+      <article class="bonus-card">
+        <img
+          class="bonus-card-art"
+          src="assets/bonus/petiscos.png"
+          alt="Carta bônus Petiscos, com pata e osso"
+          loading="lazy"
+        >
+
+        <h4>Petiscos</h4>
+        <p class="bonus-type">Força · +1 ou +2</p>
+      </article>
+
+      <article class="bonus-card">
+        <img
+          class="bonus-card-art"
+          src="assets/bonus/escudo.png"
+          alt="Carta bônus Escudo, com escudo e osso"
+          loading="lazy"
+        >
+
+        <h4>Escudo</h4>
+        <p class="bonus-type">Adversário -2 · Você +3</p>
+      </article>
+
+      <article class="bonus-card">
+        <img
+          class="bonus-card-art"
+          src="assets/bonus/raio.png"
+          alt="Carta bônus Raio, com símbolo de relâmpago"
+          loading="lazy"
+        >
+
+        <h4>Raio</h4>
+        <p class="bonus-type">Você +1 · Adversário -2</p>
+      </article>
+
+      <article class="bonus-card">
+        <img
+          class="bonus-card-art"
+          src="assets/bonus/chuteira.png"
+          alt="Carta bônus Chuteira"
+          loading="lazy"
+        >
+
+        <h4>Chuteira</h4>
+        <p class="bonus-type">Adversário -1 · Você +2</p>
+      </article>
+    </div>
+  </div>
+</div>
+</div><div class="panel hidden" id="tab-creators">
+  <div class="box">
+    <h2>⭐ Criadores</h2>
+    <p class="team-summary">O time que colocou gatos e cachorros dentro do mesmo estádio.</p>
+
+    <div class="creators-row">
+      <div class="creator-card">
+        <div class="creator-photo">
+          <img src="assets/criadores/isaac.png" alt="Foto de Isaac" width="400" height="400">
+        </div>
+        <h4>Isaac</h4>
+        <p class="creator-role">Game Developer</p>
+      </div>
+
+      <div class="creator-card">
+        <div class="creator-photo">
+          <img src="assets/criadores/murilo.png" alt="Foto de Murilo" width="400" height="400">
+        </div>
+        <h4>Murilo</h4>
+        <p class="creator-role">Web Creator</p>
+      </div>
+
+      <div class="creator-card">
+        <div class="creator-photo">
+          <img src="assets/criadores/victor.png" alt="Foto de Victor" width="400" height="400">
+        </div>
+        <h4>Victor</h4>
+        <p class="creator-role">Planejamento Estratégico</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel hidden" id="tab-support">
+  <div class="box">
+    <h2>🛠️ Suporte</h2>
+    <h3>Perguntas frequentes</h3>
+    <ul>
+      <li><strong>A carta da CPU não vira.</strong> Aguarde a animação terminar; cliques durante a animação são ignorados.</li>
+      <li><strong>Não consigo clicar nos atributos.</strong> Só é possível escolher no seu turno (veja a mensagem acima das cartas).</li>
+      <li><strong>Quero recomeçar.</strong> Termine a partida e clique em "Jogar novamente", ou recarregue a página.</li>
+      <li><strong>Como desligo o som?</strong> Use o botão 🔊 no canto superior direito.</li>
+      <li><strong>As animações incomodam.</strong> O jogo respeita a configuração de "reduzir movimento" do seu sistema.</li>
+      <li><strong>Funciona offline?</strong> Sim, a página é um arquivo único sem dependências externas.</li>
+    </ul>
+    <h3>Fale conosco</h3>
+    <form id="support-form">
+      <label>Nome<input type="text" name="nome" required></label>
+      <label>Assunto
+        <select name="assunto">
+          <option>Bug no jogo</option>
+          <option>Sugestão de carta</option>
+          <option>Balanceamento dos times</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label>Mensagem<textarea name="mensagem" required></textarea></label>
+      <button type="submit" class="btn-neutral">Enviar</button>
+      <p class="ok hidden" id="support-ok"></p>
+    </form>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
